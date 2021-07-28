@@ -1,0 +1,41 @@
+How Dynamic Form works
+
+A Model called FormTypes will have the constraints of forms of the same formType , also it will have the constraints of the object contained in an array attribute in the form
+A dynamic form will have a formType where it must have the constraints of its formType, the Dynamic Form model although is empty 
+which means the Dynamic Form Collection has different types of forms 
+
+The code also handles dependencies between attributes but to some extent explained further 
+Any other dependencies or constraints should be revised by the lawyer when the investor submits the form 
+
+FormTypes Syntax
+
+attribute:type,required,min,max,unique,Frontend
+
+where type is one of (string,number,date,array,object,objectId)
+      required states it is required or not (required=>to be required,anything else=>not required)
+      minimum value for number and minimum length for strings (doesn't work with objects,arrays,objectIds,dates)
+      max same as min
+      unique states it is unique or not (unique=>to be unique,anything else=>not unique)
+      Frontend states the type of component needed for frontend
+
+Dependencies Syntax
+
+First dependencies is how are attributes dependant on each others , for example in SSC forms is the nationality is not egyptian the equity captial is more than 100000
+
+syntax 
+
+attribute:dependantAtt,is,min,max,valid/equal,length
+
+where dependantAtt is the attribute that the meant attribute is depending on
+      is => the value where the the dependantAtt affects attribute
+      min => min value , if not specified it is ignored
+      max => max value , if not specified it is ignored
+      valid/equal => exact value , valid for strings,equals for numbers, overrides the previous constraints
+      length => exact length of input , overrides all the previous constraints
+
+NOTE: every att can have one depending attribute, the depending attribute is preferred to be mentioned before the attribute in formTypes
+NOTE 2: dependencies works only with strings and integers , but dependending attributes can be anything 
+
+
+FormTypes,DynamicForms,Dependencies all of them must hape an attribute called formType in them , it is the brain of how the algorithm works
+

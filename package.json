@@ -1,0 +1,62 @@
+{
+	"name": "int-elligence",
+	"version": "1.0.0",
+	"description": "",
+	"main": "server.js",
+	"dependencies": {
+		"@material-ui/core": "^3.9.3",
+		"@material-ui/icons": "^3.0.2",
+		"axios": "^0.18.0",
+		"babel-jest": "^23.6.0",
+		"bcrypt": "^3.0.5",
+		"bcryptjs": "^2.4.3",
+		"bootstrap": "^4.3.1",
+		"concurrently": "^4.1.0",
+		"cors": "^2.8.5",
+		"crypto": "^1.0.1",
+		"crypto-js": "^3.1.9-1",
+		"express": "^4.16.4",
+		"i": "^0.3.6",
+		"jest": "^23.6.0",
+		"jest-cli": "^24.5.0",
+		"joi": "^14.3.1",
+		"joi-objectid": "^2.0.0",
+		"jsonwebtoken": "^8.5.1",
+		"lodash": "^4.17.11",
+		"material-ui": "^0.20.2",
+		"moment": "^2.24.0",
+		"mongoose": "^5.4.22",
+		"mongoose-type-url": "^1.0.5",
+		"nodemailer": "^6.1.1",
+		"passport": "^0.4.0",
+		"passport-jwt": "^4.0.0",
+		"passport-local": "^1.0.0",
+		"randombytes": "^2.1.0",
+		"uuid": "^3.3.2"
+	},
+	"devDependencies": {
+		"jest": "^23.6.0",
+		"jest-cli": "^24.7.1",
+		"nodemon": "^1.19.0"
+	},
+	"scripts": {
+		"test": "jest --detectOpenHandles",
+		"client-install": "npm install --prefix client",
+		"start": "node server.js",
+		"server": "nodemon server.js",
+		"client": "npm install --prefix client",
+		"dev": "concurrently \"npm run server\" \"npm run client\"",
+		"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+	},
+	"keywords": [],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/SE-GUC/Int-Elligence.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/SE-GUC/Int-Elligence/issues"
+	},
+	"homepage": "https://github.com/SE-GUC/Int-Elligence#readme"
+}
